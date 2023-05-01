@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -10,16 +7,45 @@
     <title>Profile</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
+    <nav>
+      <div class="brand">
+        <a href="/">MeShop.</a>
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="/shop/index.html">Shop</a>
+        <a href="/cart/index.html">My Cart</a>
+      </div>
+    </nav>
 
-    <script src="" async defer></script>
+    <div class="body-container">
+      <div class="my-profile">
+        <h1> My Profile </h1>
+        <input type="text" placeholder="First Name" required id="fname"/>
+          <br>
+        <input type="text" placeholder="Last Name" id="lname"/>
+          <br>
+        <button id="save">Save Info</button>
+      </div>
+      <h1>Edit Password</h1>
+      
+      <div class="edit">
+        <input type="password" placeholder="Old Password" required id="fname"/>
+        <br>
+        <input type="password" placeholder="New Password" id="lname"/>
+        <br>
+        <input type="password" placeholder="Confirm Password" id="lname"/>
+        <br>
+        <button id="change-password">Change Password</button>
+
+        <br>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+    
+    <script src="./script.js" async defer></script>
   </body>
 </html>

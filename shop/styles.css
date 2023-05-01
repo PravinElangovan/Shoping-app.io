@@ -118,10 +118,12 @@ main-content .filters {
   display: flex;
   margin-top: 1rem;
   gap: 1rem;
+  width: 87%;
 }
 
 main-content .filter {
   flex: 1;
+  
   text-align: center;
   padding: 0.5rem 1rem;
   border: 1px solid black;
@@ -144,20 +146,27 @@ main-content section title {
 
 main-content .items {
   display: flex;
-  width: auto;
+  width: 100%; /* Change to a fixed width, for example: 1200px; */
   overflow-x: scroll;
   padding: 1rem 0;
   gap: 1rem;
 }
 
+
 main-content .items .item {
   border: 1px solid black;
-  width: 30%;
+  max-width: 30%;
+
+  
+  
 }
 
 main-content .items .item img {
+  padding: 0.5rem;
   max-width: 100%;
+  height: 200px; /* Or any other fixed height */
 }
+
 
 main-content .items .item .row {
   display: flex;
@@ -190,3 +199,4 @@ main-content .items .item .circle {
   border-radius: 100%;
   margin: 0 5px;
 }
+
