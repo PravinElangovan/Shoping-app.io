@@ -78,6 +78,6 @@ getCartItems(function(cartData) {
   
   // Empty cart on checkout button click
   document.getElementById('checkout-btn').addEventListener('click', () => {
-    window.location.href = "/razorpay/index.html";
+    window.location.href = "../razorpay/index.html";
   });
 });
