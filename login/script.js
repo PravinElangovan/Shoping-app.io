@@ -9,7 +9,7 @@ document.getElementById('login-btn').addEventListener('click',()=>{
     
     let user = users.find(u => u.email === enteredEmail && u.password === enteredPassword);
     if (user) {
-        window.location.href="/shop/index.html";
+        window.location.href="../shop/index.html";
         console.log('Login Successful')
         //this will for finding who is the current user
         sessionStorage.setItem('username',user.email);
