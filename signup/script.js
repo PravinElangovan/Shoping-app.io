@@ -1,33 +1,26 @@
-document.getElementById('signup-btn').addEventListener('click',()=>{
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('lname').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('pass').value;
-    var confirmPassword = document.getElementById('confirmpass').value;
-    
-    console.log(firstName);
-    console.log(lastName);
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    console.log(email);
+document.getElementById('signup-btn').addEventListener('click', () => {
+  let firstName = document.getElementById('fname').value;
+  let lastName = document.getElementById('lname').value;
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('pass').value;
+  let confirmPassword = document.getElementById('confirmpass').value;
 
-    console.log(password);
+  if (password === confirmPassword) {
+    let user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    };
 
-    console.log(confirmPassword);
-    console.log(firstName);
-    
-    if(password === confirmPassword){
-        localStorage.setItem('firstName', firstName);
-        localStorage.setItem('lastName', lastName);
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-    }
-    
-    else
-    {
-        document.getElementById('error').innerText="Password do not match";
-        document.getElementById('error').style.color="red";
-
-    }
-
-
-})
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+    console.log(users);
+    window.location.href = '/login/login.html';
+  } else {
+    document.getElementById('error').innerText = "Passwords do not match";
+    document.getElementById('error').style.color = "red";
+  }
+});
