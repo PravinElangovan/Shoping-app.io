@@ -1,4 +1,3 @@
-
 var user;
 var currentUser = sessionStorage.getItem('username')
 console.log(currentUser)
@@ -24,10 +23,6 @@ var password = document.getElementById('old-pass').value=user.password;
  var newLastName=document.getElementById('lname').value
 
 saveButton.addEventListener('click',()=>{
-    localStorage.setItem('firstName',newfirstName);
-    localStorage.setItem('secondName',newLastName);
-
-
     console.log("Button clicked")
 })
 document.getElementById('logout').addEventListener('click', () => {
@@ -35,4 +30,3 @@ document.getElementById('logout').addEventListener('click', () => {
     console.log("Logged Out Successfully")
     window.location.href = "/index.html";
 })
-

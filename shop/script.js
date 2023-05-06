@@ -19,7 +19,7 @@ console.log(filterWomens);
 console.log(filterJewells);
 console.log(filterElectronics);
 console.log(currentUser)
-
+var search = document.getElementById('search');
 
 let cart = [];
 function addEventListenersToButtons(callback) {
@@ -434,8 +434,63 @@ document.getElementById('100on').addEventListener('click',()=>{
         sessionStorage.setItem(currentUser, JSON.stringify(cart))
       })
   });
+
+
+
 })
 
+function filterBySearch(products, searchTerm) {
+  // Filter the products array based on the searchTerm
+  const filteredProducts = products.filter(product => {
+    // Convert both the product name and the search term to lowercase
+    const productName = product.title.toLowerCase();
+    const searchTermLower = searchTerm.toLowerCase();
+
+    // Return true if the product name includes the search term
+    return productName.includes(searchTermLower);
+  });
+
+  // Return the filtered products array
+  return filteredProducts;
+}
+search.addEventListener('input', () => {
+  // Clear the existing products
+  document.getElementById('all-items').innerHTML = '';
+
+  // Filter the products based on the search term
+  const searchFilter = filterBySearch(product, search.value);
+  console.log(searchFilter);
+
+  // Append the filtered products to the all-items element
+  searchFilter.forEach((product) => {
+    document.getElementById('all-items').innerHTML += `
+      <div class="item">
+        <img src="${product.image}" alt="Item" />
+        <div class="info">
+          <div class="row">
+            <div class="price">$ ${product.price}</div>
+            <div class="sized">S,M,L</div>
+          </div>
+          <div class="colors">
+            Colors:
+            <div class="row">
+              <div class="circle" style="background-color: #000"></div>
+              <div class="circle" style="background-color: #4938af"></div>
+              <div class="circle" style="background-color: #203d3e"></div>
+            </div>
+          </div>
+          <div class="row">Rating: ${product.rating.rate}</div>
+        </div>
+        <button id="addBtn">Add to Cart</button>
+      </div>`;
+      
+    // Add event listeners to the buttons for the newly appended products
+    addEventListenersToButtons(() => {
+      localStorage.setItem(currentUser, JSON.stringify(cart));
+      sessionStorage.setItem(currentUser, JSON.stringify(cart))
+    });
+  });
+});
 
 
 
