@@ -28,5 +28,5 @@ saveButton.addEventListener('click',()=>{
 document.getElementById('logout').addEventListener('click', () => {
     sessionStorage.clear();
     console.log("Logged Out Successfully")
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
 })
