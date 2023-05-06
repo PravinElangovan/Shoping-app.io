@@ -18,7 +18,7 @@ document.getElementById('signup-btn').addEventListener('click', () => {
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
     console.log(users);
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
   } else {
     document.getElementById('error').innerText = "Passwords do not match";
     document.getElementById('error').style.color = "red";
