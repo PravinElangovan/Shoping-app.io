@@ -6,8 +6,8 @@ document.getElementById('signup-btn').addEventListener('click', () => {
   let email = document.getElementById('email').value;
   let password = document.getElementById('pass').value;
   let confirmPassword = document.getElementById('confirmpass').value;
-
-  if (password === confirmPassword) {
+if(firstName !== '' && lastName !=='' && email !== '' &&  password !== '' && confirmPassword !== '' ){
+  if (password === confirmPassword ) {
     let user = {
       firstName: firstName,
       lastName: lastName,
@@ -23,4 +23,9 @@ document.getElementById('signup-btn').addEventListener('click', () => {
     document.getElementById('error').innerText = "Passwords do not match";
     document.getElementById('error').style.color = "red";
   }
+}
+else{
+  document.getElementById('error').innerText = "Please fill all the details";
+    document.getElementById('error').style.color = "red";
+}
 });
